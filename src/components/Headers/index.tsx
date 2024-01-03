@@ -6,7 +6,7 @@ import Link from 'next/link';
 import Swal from 'sweetalert2';
 import Weather from '../apis/weather';
 import LoginButton from '../antd/loginbutton';
-
+import Menu from '../Menubar/menu';
 const MainLogo = () => {
   const router = useRouter();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -52,6 +52,7 @@ const MainLogo = () => {
           <LoginButton isLoggedIn={isLoggedIn} handleLogout={handleLogout} />
         </ButtonWrapper>
       </LogoWrapper>
+      <Menu />
     </Layout>
   );
 };
