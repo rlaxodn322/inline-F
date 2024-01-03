@@ -53,7 +53,7 @@ const Weather = () => {
       ) : (
         <>
           {/* <WeatherIcon src={imgSrc} alt="Weather Icon" /> */}
-          <WeatherCloud>위치 : 논산</WeatherCloud>
+          <WeatherCloud>위치 : Nonsan</WeatherCloud>
           <WeatherCloud>날씨 : {desc}</WeatherCloud>
           <WeatherTemp>온도 : {temp}°C</WeatherTemp>
           <WeatherDesc>습도 : {humidity}%</WeatherDesc>

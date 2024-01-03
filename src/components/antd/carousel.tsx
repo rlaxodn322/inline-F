@@ -2,26 +2,35 @@ import React from 'react';
 import { Carousel } from 'antd';
 
 const contentStyle: React.CSSProperties = {
-  height: '160px',
-  color: '#fff',
-  lineHeight: '160px',
+  height: '300px',
+  color: 'black',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center', // 수직 정렬을 위해 추가
   textAlign: 'center',
-  background: '#364d79',
+  background: 'lightblue',
+};
+
+const imageStyle: React.CSSProperties = {
+  width: '1370px',
 };
 
 const App: React.FC = () => (
-  <Carousel autoplay>
+  <Carousel autoplay autoplaySpeed={2000}>
     <div>
-      <h3 style={contentStyle}>1</h3>
+      <h3 style={contentStyle}>
+        <img src="./images/picture.png" style={imageStyle} alt="carousel-image" />
+      </h3>
     </div>
     <div>
-      <h3 style={contentStyle}>2</h3>
+      <h3 style={contentStyle}>
+        <img src="./images/picture.png" style={imageStyle} alt="carousel-image" />
+      </h3>
     </div>
     <div>
-      <h3 style={contentStyle}>3</h3>
-    </div>
-    <div>
-      <h3 style={contentStyle}>4</h3>
+      <h3 style={contentStyle}>
+        <img src="./images/picture.png" style={imageStyle} alt="carousel-image" />
+      </h3>
     </div>
   </Carousel>
 );

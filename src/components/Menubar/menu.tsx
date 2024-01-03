@@ -24,7 +24,7 @@ const MenuBar: React.FC = () => {
 
   return (
     <>
-      <div style={{ display: 'flex', background: 'white', justifyContent: 'center', border: '1px solid black' }}>
+      <div style={{ display: 'flex', background: 'white', justifyContent: 'center' }}>
         {menuItems.map((item, index) => (
           <Link key={index} href={item.href}>
             <div

@@ -11,16 +11,16 @@ export const routes = [
     default: '/icons/sidebar/user_default.svg',
     name: 'Login',
   },
-  // {
-  //   router: '/',
-  //   active: '/icons/sidebar/led_active.svg',
-  //   default: '/icons/sidebar/led_default.svg',
-  //   name: 'text',
-  // },
-  // {
-  //   router: '/',
-  //   active: '/icons/sidebar/nutrient-pump_active.svg',
-  //   default: '/icons/sidebar/nutrient-pump_default.svg',
-  //   name: 'text',
-  // },
+  {
+    router: '/',
+    active: '/icons/sidebar/led_active.svg',
+    default: '/icons/sidebar/led_default.svg',
+    name: 'text',
+  },
+  {
+    router: '/',
+    active: '/icons/sidebar/nutrient-pump_active.svg',
+    default: '/icons/sidebar/nutrient-pump_default.svg',
+    name: 'text',
+  },
 ];

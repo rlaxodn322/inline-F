@@ -6,19 +6,19 @@ export const Layout = styled.section`
 `;
 
 export const ContentsWrapper = styled.div`
-  max-width: 1800px;
-  width: 100%;
-  margin: 0 80px;
+  // max-width: 1800px;
+  // width: 100%;
+  // margin: 0 80px;
   min-height: 82.5dvh;
 
-  background-color: white;
+  // background-color: white;
 
-  @media (max-width: 1680px) {
-    // width: 1200px;
-  }
+  // @media (max-width: 1680px) {
+  //   // width: 1200px;
+  // }
 
-  @media (max-width: 1340px) {
-    width: 100%;
-    margin: 0 80px;
-  }
+  // @media (max-width: 1340px) {
+  //   width: 100%;
+  //   margin: 0 80px;
+  // }
 `;
