@@ -13,12 +13,14 @@ const Home = () => {
         <title>TIGER HOUSE</title>
         <meta name="description" content="text." />
       </Head>
-
       <Carousel />
-
-      <div style={{ border: '1px solid black', width: '1370px' }}></div>
-
-      <Page></Page>
+      <Page>
+        {' '}
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <div style={{ border: '1px solid black', width: '685px', height: '50vh' }}></div>
+          <div style={{ border: '1px solid black', width: '685px', height: '50vh' }}></div>
+        </div>
+      </Page>
     </div>
   );
 };

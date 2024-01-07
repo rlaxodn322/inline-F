@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 
 const menuItems = [
-  { href: '/page1', label: '인라인 스피드' },
-  { href: '/page2', label: '스키' },
-  { href: '/page3', label: '어린이체육교실' },
-  { href: '/page4', label: '자료실' },
-  { href: '/page5', label: '커뮤니티' },
-  { href: '/page6', label: '타이거하우스소개' },
-  { href: '/page7', label: '오프라인매장' },
+  { href: '/auth/page1', label: '인라인 스피드' },
+  { href: '/auth/page2', label: '스키' },
+  { href: '/auth/page3', label: '어린이체육교실' },
+  { href: '/auth/page4', label: '자료실' },
+  { href: '/auth/page5', label: '커뮤니티' },
+  { href: '/auth/page6', label: '타이거하우스소개' },
+  { href: '/auth/page7', label: '오프라인매장' },
 ];
 
 const MenuBar: React.FC = () => {
@@ -27,7 +27,7 @@ const MenuBar: React.FC = () => {
       <div style={{ display: 'flex', background: 'white', justifyContent: 'center' }}>
         {menuItems.map((item, index) => (
           <Link key={index} href={item.href}>
-            <div
+            <a
               style={{
                 padding: '20px',
                 cursor: 'pointer',
@@ -37,7 +37,7 @@ const MenuBar: React.FC = () => {
               onMouseLeave={handleMouseLeave}
             >
               {item.label}
-            </div>
+            </a>
           </Link>
         ))}
       </div>

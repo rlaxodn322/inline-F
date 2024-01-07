@@ -24,7 +24,7 @@ const MainNavbar: FC = () => {
 
   return (
     <>
-      <Layout>
+      {/* <Layout>
         <MenuIconWrapper>
           <div onClick={onChangeMenu} id={'hamburger'} />
         </MenuIconWrapper>
@@ -47,7 +47,7 @@ const MainNavbar: FC = () => {
               })}
           </MenuWrapper>
         </Menu>
-      </Layout>
+      </Layout> */}
     </>
   );
 };

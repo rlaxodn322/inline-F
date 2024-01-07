@@ -9,7 +9,7 @@ export const Layout = styled.div`
 
 export const LogoWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   padding: 10px;
   padding-left: 80px;
   background-color: white;

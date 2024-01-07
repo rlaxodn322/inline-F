@@ -47,6 +47,7 @@ const MainLogo = () => {
             <img src={'/images/Tiger.jpeg'} />
           </a>
         </Link>
+        <h1 style={{ marginRight: '450px', display: 'flex', alignItems: 'center' }}>TigerHouse</h1>
         <Weather></Weather>
         <ButtonWrapper>
           <LoginButton isLoggedIn={isLoggedIn} handleLogout={handleLogout} />

@@ -8,7 +8,6 @@ const contentStyle: React.CSSProperties = {
   justifyContent: 'center',
   alignItems: 'center', // 수직 정렬을 위해 추가
   textAlign: 'center',
-  background: 'lightblue',
 };
 
 const imageStyle: React.CSSProperties = {
