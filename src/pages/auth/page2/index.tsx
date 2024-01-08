@@ -11,7 +11,7 @@ const MyPage = () => {
         <meta name="description" content="스키페이지" />
       </Head>
       <Page>
-        <div style={{ display: 'flex', width: '1370px' }}>
+        <div style={{ display: 'flex', width: '1370px', justifyContent: 'center' }}>
           <Menual2 />
         </div>
       </Page>

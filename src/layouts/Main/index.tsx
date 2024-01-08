@@ -9,7 +9,9 @@ const MainLayout: LayoutProps = ({ children }) => {
     <Layout>
       <MainHeader />
       <MainNavbar />
+
       <ContentsWrapper>{children}</ContentsWrapper>
+
       <MainFooter />
     </Layout>
   );

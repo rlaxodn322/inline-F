@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 declare global {
   interface Window {
@@ -7,10 +7,12 @@ declare global {
 }
 
 export default function MapComponent() {
+  const [map, setMap] = useState(null);
+
   useEffect(() => {
     const kakaoMapScript = document.createElement('script');
     kakaoMapScript.async = false;
-    kakaoMapScript.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=c8a8be4fec1289917350745769f6aae0&autoload=false`;
+    kakaoMapScript.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=1d7c8ad49ee868885a1d1bab7e46d818&autoload=false`;
     document.head.appendChild(kakaoMapScript);
 
     const onLoadKakaoAPI = () => {
@@ -21,7 +23,8 @@ export default function MapComponent() {
           level: 6,
         };
 
-        const map = new window.kakao.maps.Map(container, options);
+        const newMap = new window.kakao.maps.Map(container, options);
+        setMap(newMap);
       });
     };
 
@@ -29,8 +32,9 @@ export default function MapComponent() {
   }, []);
 
   return (
-    <div>
-      <div id="map" style={{ width: '100%', height: '350px', margin: '10px 0 10px 0' }}></div>
+    <div style={{ margin: '0 auto' }}>
+      <div id="map" style={{ width: '1370px', height: '350px', margin: '10px 0 10px 0' }}></div>
+      {/* Render other components */}
     </div>
   );
 }
