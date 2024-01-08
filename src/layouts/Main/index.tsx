@@ -22,7 +22,6 @@ const Layout = styled.section`
 `;
 
 const ContentsWrapper = styled.div`
-  max-width: 1800px;
   width: 100%;
   margin: 0 80px;
   min-height: 82.5dvh;
