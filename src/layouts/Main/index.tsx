@@ -3,13 +3,14 @@ import React from 'react';
 import type { LayoutProps } from '../../types/pageWithLayout';
 import MainHeader from '../../components/Headers/index';
 import MainNavbar from '../../components/Navbars/index';
-
+import MainFooter from '../../components/Footers/index';
 const MainLayout: LayoutProps = ({ children }) => {
   return (
     <Layout>
       <MainHeader />
       <MainNavbar />
       <ContentsWrapper>{children}</ContentsWrapper>
+      <MainFooter />
     </Layout>
   );
 };
