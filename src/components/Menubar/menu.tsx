@@ -26,19 +26,41 @@ const MenuBar: React.FC = () => {
     <>
       <div style={{ display: 'flex', background: 'white', justifyContent: 'center' }}>
         {menuItems.map((item, index) => (
-          <Link key={index} href={item.href}>
-            <a
-              style={{
-                padding: '20px',
-                cursor: 'pointer',
-                color: index === hoveredIndex ? 'lightblue' : 'black',
-              }}
-              onMouseEnter={() => handleMouseEnter(index)}
-              onMouseLeave={handleMouseLeave}
-            >
-              {item.label}
-            </a>
-          </Link>
+          <div key={index} style={{ position: 'relative' }}>
+            <Link href={item.href}>
+              <a
+                style={{
+                  padding: '20px',
+                  cursor: 'pointer',
+                  color: index === hoveredIndex ? 'lightblue' : 'black',
+                }}
+                onMouseEnter={() => handleMouseEnter(index)}
+                onMouseLeave={handleMouseLeave}
+              >
+                {item.label}
+              </a>
+            </Link>
+
+            {/* 서브메뉴를 동적으로 렌더링합니다. */}
+            {index === hoveredIndex && item.subMenu && (
+              <div
+                style={{
+                  position: 'absolute',
+                  top: '100%',
+                  left: 0,
+                  background: 'white',
+                  boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)',
+                  zIndex: 1,
+                }}
+              >
+                {item.subMenu.map((subItem, subIndex) => (
+                  <div key={subIndex} style={{ padding: '10px' }}>
+                    {subItem}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
         ))}
       </div>
     </>
