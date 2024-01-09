@@ -51,7 +51,7 @@ export default function MapComponent() {
 
         // 첫 번째 마커 클릭 이벤트 등록
         window.kakao.maps.event.addListener(marker1, 'click', function () {
-          handleMarkerClick(marker1, '주소: 논산학생롤러경기장 충남 논산시 은진면 매죽헌로 331');
+          handleMarkerClick(marker1, '주소: 충남 논산시 은진면 매죽헌로 331, 논산학생롤러경기장1');
         });
 
         marker1.setMap(newMap);
@@ -62,9 +62,8 @@ export default function MapComponent() {
           position: markerPosition2,
         });
 
-        // 두 번째 마커 클릭 이벤트 등록
         window.kakao.maps.event.addListener(marker2, 'click', function () {
-          handleMarkerClick(marker2, '주소: 타이거하우스 충남 논산시 시민로184번길 39-8');
+          handleMarkerClick(marker2, '주소:  충남 논산시 시민로184번길 39-8, 타이거하우스1');
         });
 
         marker2.setMap(newMap);
