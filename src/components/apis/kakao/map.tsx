@@ -9,6 +9,7 @@ declare global {
 export default function MapComponent() {
   const [map, setMap] = useState(null);
   const [infowindow, setInfowindow] = useState(null);
+  const [clickedMarker, setClickedMarker] = useState(null);
 
   useEffect(() => {
     const kakaoMapScript = document.createElement('script');
@@ -37,11 +38,9 @@ export default function MapComponent() {
             content,
           });
 
-          // 클릭한 마커에 새로운 InfoWindow 열기
-          newInfowindow.open(newMap, marker);
-
-          // 열린 InfoWindow를 상태로 저장
+          // 클릭한 마커에 새로운 InfoWindow를 상태로 저장
           setInfowindow(newInfowindow);
+          setClickedMarker(marker);
         };
 
         // 첫 번째 마커 추가
@@ -52,7 +51,7 @@ export default function MapComponent() {
 
         // 첫 번째 마커 클릭 이벤트 등록
         window.kakao.maps.event.addListener(marker1, 'click', function () {
-          handleMarkerClick(marker1, '첫 번째 마커 정보');
+          handleMarkerClick(marker1, '주소: 논산학생롤러경기장 충남 논산시 은진면 매죽헌로 331');
         });
 
         marker1.setMap(newMap);
@@ -65,7 +64,7 @@ export default function MapComponent() {
 
         // 두 번째 마커 클릭 이벤트 등록
         window.kakao.maps.event.addListener(marker2, 'click', function () {
-          handleMarkerClick(marker2, '두 번째 마커 정보');
+          handleMarkerClick(marker2, '주소: 타이거하우스 충남 논산시 시민로184번길 39-8');
         });
 
         marker2.setMap(newMap);
@@ -75,7 +74,14 @@ export default function MapComponent() {
     };
 
     kakaoMapScript.addEventListener('load', onLoadKakaoAPI, { passive: true });
-  }, [infowindow]);
+  }, [infowindow, clickedMarker]);
+
+  useEffect(() => {
+    if (infowindow && clickedMarker && map) {
+      // 클릭한 마커의 위치에 InfoWindow 열기
+      infowindow.open(map, clickedMarker);
+    }
+  }, [infowindow, clickedMarker, map]);
 
   return (
     <div style={{ margin: '0 auto' }}>
