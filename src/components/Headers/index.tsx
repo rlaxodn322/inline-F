@@ -53,6 +53,7 @@ const MainLogo = () => {
           <LoginButton isLoggedIn={isLoggedIn} handleLogout={handleLogout} />
         </ButtonWrapper>
       </LogoWrapper>
+
       <Menu />
     </Layout>
   );

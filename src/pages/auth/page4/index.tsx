@@ -8,10 +8,6 @@ const MyPage = () => {
   const [posts, setPosts] = useState([
     { id: 1, title: '첫 번째 글', content: '이것은 첫 번째 글입니다.' },
     { id: 2, title: '두 번째 글', content: '이것은 두 번째 글입니다.' },
-    { id: 2, title: '두 번째 글', content: '이것은 두 번째 글입니다.' },
-    { id: 2, title: '두 번째 글', content: '이것은 두 번째 글입니다.' },
-    { id: 2, title: '두 번째 글', content: '이것은 두 번째 글입니다.' },
-    { id: 2, title: '두 번째 글', content: '이것은 두 번째 글입니다.' },
 
     // 추가적인 더미데이터를 필요에 따라 추가할 수 있습니다.
   ]);

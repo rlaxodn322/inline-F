@@ -1,23 +1,13 @@
 import styled from '@emotion/styled';
 
 export const Page = styled.section`
-  // display: inline-flex;
   display: flex;
   justify-content: center;
-
-  // flex-wrap: wrap;
-  // width: auto;
-  // height: auto;
-  // margin: 16px 0px 0px 0px;
-  // background-color: white;
 `;
 
-export const RowWrapper = styled.div`
-  // display: flex;
-  // flex-direction: column;
-  // flex-wrap: wrap;
-  // max-width: auto;
-  // margin-right: 16px;
+export const Container = styled.div`
+  width: 80%;
+  margin: 20px;
 `;
 
 export const FormContainer = styled.div`
@@ -26,17 +16,20 @@ export const FormContainer = styled.div`
 
 export const Input = styled.input`
   width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
   font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
 `;
 
 export const Button = styled.button`
   background-color: #4caf50;
   color: white;
-  padding: 10px;
-  font-size: 16px;
+  padding: 15px;
+  font-size: 18px;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
 `;
 
@@ -46,15 +39,21 @@ export const PostList = styled.ul`
 `;
 
 export const PostItem = styled.li`
-  border: 1px solid #ccc;
-
+  border: 1px solid #ddd;
   border-radius: 5px;
+  margin: 10px 0;
 
   h3 {
-    margin-bottom: 5px;
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    margin: 0;
+    border-radius: 5px 5px 0 0;
   }
 
   p {
-    color: #555;
+    padding: 10px;
+    margin: 0;
+    color: #333;
   }
 `;

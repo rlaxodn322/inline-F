@@ -9,6 +9,7 @@ const menuItems = [
   { href: '/auth/page5', label: '커뮤니티' },
   { href: '/auth/page6', label: '타이거하우스소개' },
   { href: '/auth/page7', label: '오프라인매장' },
+  { href: '/auth/page8', label: '기타' },
 ];
 
 const MenuBar: React.FC = () => {
@@ -24,9 +25,9 @@ const MenuBar: React.FC = () => {
 
   return (
     <>
-      <div style={{ display: 'flex', background: 'white', justifyContent: 'center' }}>
+      <div style={{ display: 'flex', background: 'white', justifyContent: 'center', paddingLeft: '80px' }}>
         {menuItems.map((item, index) => (
-          <div key={index} style={{ position: 'relative' }}>
+          <div key={index} style={{ position: 'relative', paddingRight: '50px' }}>
             <Link href={item.href}>
               <a
                 style={{

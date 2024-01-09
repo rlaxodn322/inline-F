@@ -12,23 +12,24 @@ const contentStyle: React.CSSProperties = {
 
 const imageStyle: React.CSSProperties = {
   width: '1370px',
+  objectFit: 'cover',
 };
 
 const App: React.FC = () => (
   <Carousel autoplay autoplaySpeed={2000}>
     <div>
       <h3 style={contentStyle}>
-        <img src="./images/picture.png" style={imageStyle} alt="carousel-image" />
+        <img src="./images/picture1.png" style={imageStyle} alt="carousel-image" />
       </h3>
     </div>
     <div>
       <h3 style={contentStyle}>
-        <img src="./images/picture.png" style={imageStyle} alt="carousel-image" />
+        <img src="./images/picture2.png" style={imageStyle} alt="carousel-image" />
       </h3>
     </div>
     <div>
       <h3 style={contentStyle}>
-        <img src="./images/picture.png" style={imageStyle} alt="carousel-image" />
+        <img src="./images/picture3.png" style={imageStyle} alt="carousel-image" />
       </h3>
     </div>
   </Carousel>
