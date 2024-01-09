@@ -1,8 +1,6 @@
 import React, { FC, useState } from 'react';
-import { IconImage, Layout, Menu, MenuIconWrapper, MenuWrapper } from './style';
-import { routes } from '../../../routes';
+
 import { useRouter } from 'next/router';
-import Link from 'next/link';
 
 const MainNavbar: FC = () => {
   // const [openHamburger, setOpenHamburger] = useState(true);

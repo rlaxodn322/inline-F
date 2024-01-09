@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import MainLayout from '../../../layouts/Main';
 import Menual2 from '../../../components/Manual/ski';
-import { Button } from 'antd';
 import { Page } from './style';
 const MyPage = () => {
   return (
