@@ -8,17 +8,17 @@ const menuItems = [
     label: '인라인스케이트',
     subMenu: ['레이싱반', '피트니스반', '자격증반', '특수체육'],
     subMenu2: [
-      ['(레이싱)커리큐럼', '강습신청,비용'],
-      ['(피트니스)커리큐럼', '강습신청,비용'],
-      ['(자격증)커리큐럼', '강습신청,비용'],
-      ['(특수체육)커리큐럼', '강습신청,비용'],
+      ['(인라인레이싱)커리큐럼', '강습신청,비용'],
+      ['(인라인피트니스)커리큐럼', '강습신청,비용'],
+      ['(인라인자격증)커리큐럼', '강습신청,비용'],
+      ['(인라인특수체육)커리큐럼', '강습신청,비용'],
     ],
   },
   { label: '선수트레이닝(부상복귀,개인PT)', subMenu: ['히스토리', '신청,비용'] },
   {
     label: '스키',
     subMenu: ['레이싱반'],
-    subMenu2: [['(레이싱)커리큐럼', '강습신청,비용']],
+    subMenu2: [['(스키레이싱)커리큐럼', '스키강습신청,비용']],
   },
   {
     label: '매장',
@@ -45,12 +45,32 @@ const MenuBar: React.FC = () => {
   };
 
   const handleSubMenuClick = (index: number) => {
-    setActiveSubMenu2(index);
+    if (activeIndex !== null) {
+      setActiveSubMenu2(index);
+
+      // subMenu 아이템 클릭 시, 지정된 URL로 이동
+      if (menuItems[activeIndex] && menuItems[activeIndex].subMenu) {
+        const subMenuItem = menuItems[activeIndex].subMenu[index];
+        if (subMenuItem === '인스타그램') {
+          router.push('/auth/page4'); // 인스타그램 클릭 시 auth/page4로 이동
+        }
+        // 다른 subMenu 아이템 클릭 시 다른 동작 수행
+        // 예를 들어 router.push('/auth/page3'); 등
+      }
+    }
   };
 
   const handleSubMenu2Click = (url: string) => {
     // subMenu2 아이템 클릭 시, 지정된 URL로 이동
-    router.push('/auth/page6');
+    if (url === '(인라인레이싱)커리큐럼') {
+      router.push('/auth/page1'); // (인라인레이싱)커리큐럼 클릭 시 auth/page1로 이동
+    } else if (url === '(스키레이싱)커리큐럼') {
+      router.push('/auth/page2');
+    } else if (url === '소개 및 찾아오는길') {
+      router.push('/auth/page6');
+    } else if (url === '인스타그램') {
+      router.push('/auth/page4'); // 인스타그램 클릭 시 auth/page4로 이동
+    }
   };
 
   const handleFindUsClick = () => {
