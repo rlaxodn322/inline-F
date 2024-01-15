@@ -1,3 +1,6 @@
+// MyPage.tsx
+
+import React from 'react'; // 'React' import 추가
 import Head from 'next/head';
 import MainLayout from '../../../layouts/Main';
 import { useState } from 'react';
@@ -8,16 +11,16 @@ const MyPage = () => {
   const [posts, setPosts] = useState([
     { id: 1, title: '첫 번째 글', content: '이것은 첫 번째 글입니다.' },
     { id: 2, title: '두 번째 글', content: '이것은 두 번째 글입니다.' },
-
     // 추가적인 더미데이터를 필요에 따라 추가할 수 있습니다.
   ]);
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setNewPost((prevPost) => ({ ...prevPost, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    // 타입 명시
     e.preventDefault();
     const newPostWithId = { ...newPost, id: posts.length + 1 };
     setPosts((prevPosts) => [...prevPosts, newPostWithId]);
