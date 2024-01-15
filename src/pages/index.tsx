@@ -13,7 +13,6 @@ const Home = () => {
       <div style={{ marginTop: '30px' }}>
         <Carousel />
       </div>
-
       <Page>
         <DashHead />
       </Page>
