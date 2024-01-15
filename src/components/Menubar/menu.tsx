@@ -21,9 +21,12 @@ const MenuBar: React.FC = () => {
   };
 
   const handleMouseLeave = (event: React.MouseEvent) => {
-    // Check if the mouse is still inside the submenu before closing
+    // Check if the mouse is still inside the submenu or the menu before closing
     const relatedTarget = event.relatedTarget as Node;
-    if (submenuRef.current && relatedTarget && !submenuRef.current.contains(relatedTarget)) {
+    if (
+      (submenuRef.current && relatedTarget && !submenuRef.current.contains(relatedTarget)) ||
+      (!submenuRef.current && !relatedTarget)
+    ) {
       setHoveredIndex(null);
     }
   };
@@ -32,7 +35,12 @@ const MenuBar: React.FC = () => {
     <>
       <div style={{ display: 'flex', background: 'white', justifyContent: 'center', paddingLeft: '80px' }}>
         {menuItems.map((item, index) => (
-          <div key={index} style={{ position: 'relative', paddingRight: '50px' }}>
+          <div
+            key={index}
+            style={{ position: 'relative', paddingRight: '50px' }}
+            onMouseEnter={() => handleMouseEnter(index)}
+            onMouseLeave={handleMouseLeave}
+          >
             <Link href={item.href}>
               <a
                 style={{
@@ -40,8 +48,6 @@ const MenuBar: React.FC = () => {
                   cursor: 'pointer',
                   color: index === hoveredIndex ? 'lightblue' : 'black',
                 }}
-                onMouseEnter={() => handleMouseEnter(index)}
-                onMouseLeave={handleMouseLeave}
               >
                 {item.label}
               </a>
