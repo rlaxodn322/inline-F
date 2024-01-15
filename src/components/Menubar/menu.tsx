@@ -3,9 +3,8 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 const menuItems = [
-  { href: '/auth/page1', label: '타이거하우스소개', subMenu: ['히스토리', '강사진', '찾아오는길'] },
+  { label: '타이거하우스소개', subMenu: ['히스토리', '강사진', '찾아오는길'] },
   {
-    href: '/auth/page2',
     label: '인라인스케이트',
     subMenu: ['레이싱반', '피트니스반', '자격증반', '특수체육'],
     subMenu2: [
@@ -15,20 +14,18 @@ const menuItems = [
       ['(특수체육)커리큐럼', '강습신청,비용'],
     ],
   },
-  { href: '/auth/page3', label: '선수트레이닝(부상복귀,개인PT)', subMenu: ['히스토리', '신청,비용'] },
+  { label: '선수트레이닝(부상복귀,개인PT)', subMenu: ['히스토리', '신청,비용'] },
   {
-    href: '/auth/page4',
     label: '스키',
     subMenu: ['레이싱반'],
     subMenu2: [['(레이싱)커리큐럼', '강습신청,비용']],
   },
   {
-    href: '/auth/page5',
     label: '매장',
     subMenu: ['오프라인', '온라인'],
     subMenu2: [['소개 및 찾아오는길', '판매품목']],
   },
-  { href: '/auth/page6', label: '커뮤니티', subMenu: ['인스타그램', '유튜브', '기타 소식'] },
+  { label: '커뮤니티', subMenu: ['인스타그램', '유튜브', '기타 소식'] },
 ];
 
 const MenuBar: React.FC = () => {
@@ -53,6 +50,11 @@ const MenuBar: React.FC = () => {
 
   const handleSubMenu2Click = (url: string) => {
     // subMenu2 아이템 클릭 시, 지정된 URL로 이동
+    router.push('/auth/page6');
+  };
+
+  const handleFindUsClick = () => {
+    // "찾아오는길" 클릭 시, 지정된 URL로 이동
     router.push('/auth/page6');
   };
 
@@ -99,7 +101,7 @@ const MenuBar: React.FC = () => {
                 left: 'auto',
                 background: 'white',
                 boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)',
-                zIndex: 1,
+                zIndex: 2,
                 marginTop: '1px',
                 border: '1px solid #ccc',
                 borderRadius: '4px',
@@ -109,7 +111,7 @@ const MenuBar: React.FC = () => {
               {item.subMenu.map((subItem, subIndex) => (
                 <div
                   key={subIndex}
-                  onClick={() => handleSubMenuClick(subIndex)}
+                  onClick={() => (subItem === '찾아오는길' ? handleFindUsClick() : handleSubMenuClick(subIndex))}
                   style={{ padding: '10px', borderBottom: '1px solid #eee', cursor: 'pointer' }}
                 >
                   {subItem}
