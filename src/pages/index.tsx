@@ -2,7 +2,7 @@ import Head from 'next/head';
 import MainLayout from '../layouts';
 import { Page } from './style';
 import Carousel from '../components/antd/carousel';
-import DashHead from '../components/dashboard/middle';
+import Dashmiddle from '../components/dashboard/middle';
 const Home = () => {
   return (
     <div>
@@ -14,7 +14,7 @@ const Home = () => {
         <Carousel />
       </div>
       <Page>
-        <DashHead />
+        <Dashmiddle />
       </Page>
     </div>
   );

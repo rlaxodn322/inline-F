@@ -9,9 +9,9 @@ declare global {
 }
 
 export default function MapComponent() {
-  const [map, setMap] = useState(null);
-  const [infowindow, setInfowindow] = useState(null);
-  const [clickedMarker, setClickedMarker] = useState(null);
+  const [map, setMap] = useState<any>(null);
+  const [infowindow, setInfowindow] = useState<any>(null);
+  const [clickedMarker, setClickedMarker] = useState<any>(null);
 
   useEffect(() => {
     const kakaoMapScript = document.createElement('script');
@@ -49,7 +49,7 @@ export default function MapComponent() {
       });
     };
 
-    const addMarker = (map, lat, lng, content) => {
+    const addMarker = (map: any, lat: number, lng: number, content: string) => {
       const markerPosition = new window.kakao.maps.LatLng(lat, lng);
       const marker = new window.kakao.maps.Marker({
         position: markerPosition,
@@ -64,7 +64,7 @@ export default function MapComponent() {
       return marker;
     };
 
-    const handleMarkerClick = (marker, content) => {
+    const handleMarkerClick = (marker: any, content: string) => {
       if (infowindow) {
         infowindow.close();
       }
